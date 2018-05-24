@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 250px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: teal;
+  font-size: 18px;
+  transition: 0.2s;
+  color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+ul li.checked {
+  background: #888888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: white;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style header */
+.header {
+  /* background-color: #f44336; */
+  background-image: url('https://images.unsplash.com/photo-1444065707204-12decac917e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f624ed976f195082fe69f5603de9b1ad&auto=format&fit=crop&w=1053&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 80px 70px;
+  color: white;
+  text-align: center;
+}
+
+/* .header::after{
+  content: '';
+  display: table;
+  clear: both;
+} */
+
+/*Style the input*/
+input {
+  border: none;
+  width: 70%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/*style addBtn*/
+.addBtn {
+  padding: 10px;
+  width: 30%;
+  background: #4caf50;
+  color: white;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover{
+  background-color: #bbb;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 2pc;
+}
+
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 1px dotted;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  background-color: #007bff;
+  border-color: #0062cc;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Reem Kufi';
+}
+
+body {
+    background-color: snow;
+}
+
+/* @media (min-width: 576px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 992px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 1200px) {
+	html {
+		font-size: 20px;
+	}
+} */
+
+
+.navbar {
+    background-color: #46acc2;
+    display: flex;
+    padding: 15px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-items {
+    display: flex;
+}
+
+.navbar-link {
+    padding-right: 15px;
+}
+
+.navbar-link a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-items-right {
+    margin-left: auto;
+}
+
+.navbar-link-toggle {
+    display: none
+}
+
+@media only screen and (max-width: 768px){
+    .navbar-items,
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar-items {
+        display: none;
+    }
+    .navbar-items-right {
+        margin-left: 0;
+    }
+    .navbar-link-toggle {
+        align-self: flex-end;
+        display: initial;
+        position: absolute;
+        cursor: pointer;
+    }
+    .navbar-toggleShow {
+        display: flex;
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;   
+}
+
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.main {
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.img-profile {
+    width: 40%;
+    border-radius: 100%;
+}
+
+.main h1, p {
+    color: dimgrey;
+}
+
+.main h1 {
+    font-size: 6vw;
+    font-weight: 600;
+}
+
+.main p {
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+.main a {
+    text-decoration: none;
+    color: lightseagreen;
+}
+
+.right {
+    background-color: #e5e5e5;
+    float: left;
+    width: 30%;
+    padding: 15px;
+    margin-top: 7px;
+    text-align: center;
+}
+
+.social-media {
+    padding: 10px 10px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.social-media i {
+    font-size: 3vw;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: skyblue
+}
+
+@media only screen and (max-width: 768px){
+    /* for mobile phone*/
+    .main,
+    .right {
+        width: 100%;
+    }
+}
+
