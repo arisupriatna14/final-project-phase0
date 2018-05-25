@@ -160,9 +160,11 @@ function changeColor(e) {
 
 /* Toggel Menu */
 function classToggle() {
-  const navs = document.querySelectorAll(".navbar-items");
+  var navs = document.querySelectorAll(".navbar-items");
 
-  navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
+  for(var a = 0; a < navs.length; a++){
+    navs[a].classList.toggle('navbar-toggleShow')
+  }
 }
 document
   .querySelector(".navbar-link-toggle")
