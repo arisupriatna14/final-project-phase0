@@ -12,9 +12,9 @@ var textH2 = document.createTextNode("My To Do Apps");
 h2.appendChild(textH2);
 div.appendChild(h2); //melakukan append h2 sebagai child dari <div id="myDIV">
 
-var h3 = document.createElement('h3')
-h3.setAttribute('id', 'date')
-div.appendChild(h3)
+var h3 = document.createElement("h3");
+h3.setAttribute("id", "date");
+div.appendChild(h3);
 
 //membuat element input
 var input = document.createElement("input");
@@ -77,9 +77,7 @@ var month = date.getMonth();
 //   thisDay = myDay[thisDay];
 var yy = date.getFullYear();
 var year = yy < 1000 ? yy + 1999 : yy;
-document.getElementById("date").innerHTML = `${day} ${
-  myMonth[month]
-} ${year}`;
+document.getElementById("date").innerHTML = `${day} ${myMonth[month]} ${year}`;
 
 //membuat button close
 var myNodeList = document.getElementsByTagName("LI");
@@ -143,7 +141,7 @@ function newElement() {
 /*change theme */
 
 var navbar = document.querySelector(".navbar");
-var addBtn = document.querySelector('.addBtn')
+var addBtn = document.querySelector(".addBtn");
 var zeros = "0000000";
 
 function changeColor(e) {
@@ -162,8 +160,8 @@ function changeColor(e) {
 function classToggle() {
   var navs = document.querySelectorAll(".navbar-items");
 
-  for(var a = 0; a < navs.length; a++){
-    navs[a].classList.toggle('navbar-toggleShow')
+  for (var a = 0; a < navs.length; a++) {
+    navs[a].classList.toggle("navbar-toggleShow");
   }
 }
 document
