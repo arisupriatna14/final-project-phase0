@@ -134,7 +134,7 @@ button:focus {
 
 @import url('https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300');
 
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -146,7 +146,7 @@ html {
 
 body {
     background-color: snow;
-}
+} */
 
 /* @media (min-width: 576px) {
 	html {
@@ -173,7 +173,7 @@ body {
 } */
 
 
-.navbar {
+ .navbar {
     background-color: #46acc2;
     display: flex;
     padding: 15px;
@@ -310,7 +310,7 @@ body {
 .social-media a {
     text-decoration: none;
     color: skyblue
-}
+} 
 
 @media only screen and (max-width: 768px){
     /* for mobile phone*/

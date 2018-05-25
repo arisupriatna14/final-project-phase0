@@ -1,87 +1,85 @@
-// var body = document.body; //pertama seleksi terlebih dahulu <body>
-// var mainDiv = document.createElement('div');
-// var mainDivAttrId = document.createAttribute('id');
-// mainDivAttrId.value = 'main';
-// mainDiv.setAttributeNode(mainDivAttrId)
-// body.appendChild(mainDiv);
-
-// //membuat div didalam div dengan id = "main"
-// var insideMainDiv = document.createElement('div')
-// insideMainDiv.setAttribute('id', 'insidemain')
-// mainDiv.appendChild(insideMainDiv)
-
-// var h1 = document.createElement('h1')//membuat element h1
-// var h1Text = document.createTextNode('بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ')//membuat isi text
-// h1.appendChild(h1Text) //melakukan appendChild ke element <h1>
-// insideMainDiv.appendChild(h1)//kemudian, kita append h1 sebagai child dari <div id="inside-main">
-
-// //membuat button
-// var button = document.createElement('button')
-// var buttonText = document.createTextNode('Click Me!')
-// button.appendChild(buttonText)
-// //membuat alert ketika button di klik
-// button.addEventListener('click', function(){
-//   alert('Hello, Ari Supriatna');
-// })
-// insideMainDiv.appendChild(button)
-
-// var h2 = document.createElement('h2')
-// var h2Text = document.createTextNode('Ini adalah heading 2')
-// h2.appendChild(h2Text)
-// body.appendChild(h2)
-
-// //untuk menghapus element
-// body.removeChild(h2)
-
-//================================
-var body = document.body
+var body = document.body;
 
 //membuat element div
-var div = document.createElement('div')
-div.setAttribute('id', 'myDIV')
-div.className = 'header'
-body.appendChild(div)
+var div = document.createElement("div");
+div.setAttribute("id", "myDIV");
+div.className = "header";
+body.appendChild(div);
 
 //membuat element h2
-var h2 = document.createElement('h2')
-var textH2 = document.createTextNode('My To Do Apps')
-h2.appendChild(textH2)
-div.appendChild(h2) //melakukan append h2 sebagai child dari <div id="myDIV">
+var h2 = document.createElement("h2");
+var textH2 = document.createTextNode("My To Do Apps");
+h2.appendChild(textH2);
+div.appendChild(h2); //melakukan append h2 sebagai child dari <div id="myDIV">
+
+var h3 = document.createElement('h3')
+h3.setAttribute('id', 'date')
+div.appendChild(h3)
 
 //membuat element input
-var input = document.createElement('input')
-input.setAttribute('id', 'myInput')
-input.setAttribute('type', 'text')
-input.setAttribute('placeholder', 'Title...')
-div.appendChild(input)
+var input = document.createElement("input");
+input.setAttribute("id", "myInput");
+input.setAttribute("type", "text");
+input.setAttribute("placeholder", "Add a to-do");
+div.appendChild(input);
 
-var span = document.createElement('span')
-var spanText = document.createTextNode('Add')
-span.className = 'addBtn'
-span.onclick = function(){
+var span = document.createElement("span");
+var spanText = document.createTextNode("Add");
+span.className = "addBtn";
+span.onclick = function() {
   newElement();
-} 
-span.appendChild(spanText)
-div.appendChild(span)
+};
+span.appendChild(spanText);
+div.appendChild(span);
 
 /* membuat list */
 //membuat element ul
-var ul = document.createElement('ul')
-ul.setAttribute('id', 'myUL')
-body.appendChild(ul)
+var ul = document.createElement("ul");
+ul.setAttribute("id", "myUL");
+body.appendChild(ul);
 
 //membuat element li
-var li = document.createElement('li')
-var textList1 = document.createTextNode('Ngoding')
-li.appendChild(textList1)
-ul.appendChild(li)
+var li = document.createElement("li");
+var textList1 = document.createTextNode("Ngoding");
+li.appendChild(textList1);
+ul.appendChild(li);
 
-var li2 = document.createElement('li')
-var textList2 = document.createTextNode('Live Code')
-li2.appendChild(textList2)
-ul.appendChild(li2)
+var li2 = document.createElement("li");
+var textList2 = document.createTextNode("Live Code");
+li2.appendChild(textList2);
+ul.appendChild(li2);
 
+var li3 = document.createElement("li");
+var textList3 = document.createTextNode("Final live code phase 0");
+li3.appendChild(textList3);
+ul.appendChild(li3);
 
+/* DATE */
+var myMonth = [
+  "Januari",
+  "Februari",
+  "Maret",
+  "April",
+  "Mei",
+  "Juni",
+  "Juli",
+  "Agustus",
+  "September",
+  "Oktober",
+  "November",
+  "Desember"
+];
+//var myDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var date = new Date();
+var day = date.getDate();
+var month = date.getMonth();
+// var thisDay = date.getDay(),
+//   thisDay = myDay[thisDay];
+var yy = date.getFullYear();
+var year = yy < 1000 ? yy + 1999 : yy;
+document.getElementById("date").innerHTML = `${day} ${
+  myMonth[month]
+} ${year}`;
 
 //membuat button close
 var myNodeList = document.getElementsByTagName("LI");
@@ -130,7 +128,7 @@ function newElement() {
 
   var span = document.createElement("span");
   var spanText = document.createTextNode("\u00D7");
-  span.className = "close"
+  span.className = "close";
   span.appendChild(spanText);
   li.appendChild(span);
 
@@ -142,11 +140,30 @@ function newElement() {
   }
 }
 
+/*change theme */
+
+var navbar = document.querySelector(".navbar");
+var addBtn = document.querySelector('.addBtn')
+var zeros = "0000000";
+
+function changeColor(e) {
+  var color = "#" + Math.floor(Math.random() * 0xffffff).toString(16);
+  var colorLength = color.length;
+
+  if (colorLength < 7) {
+    color += zeros.substring(0, zeros.length - colorLength);
+  }
+
+  navbar.style.backgroundColor = color;
+  addBtn.style.backgroundColor = color;
+}
 
 /* Toggel Menu */
 function classToggle() {
-  const navs = document.querySelectorAll('.navbar-items')
+  const navs = document.querySelectorAll(".navbar-items");
 
-  navs.forEach(nav => nav.classList.toggle('navbar-toggleShow'));
+  navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
 }
-document.querySelector('.navbar-link-toggle').addEventListener('click', classToggle);
+document
+  .querySelector(".navbar-link-toggle")
+  .addEventListener("click", classToggle);
