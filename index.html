@@ -33,7 +33,7 @@
   </div>
 
   <!-- form-register -->
-  <form action="home.html" onsubmit="return register()">
+  <form action="home.html" onsubmit="return register(this)">
     <div class="container">
       <h1>Register</h1>
       <p>
@@ -43,12 +43,20 @@
       <label for="email">
         <strong>Email</strong>
       </label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <input type="text" placeholder="Enter Email" name="email" id="email">
       <label for="pass">
         <strong>Password</strong>
       </label>
-      <input type="password" placeholder="Enter Password" name="pass" id="pass" required>
-      <button type="submit" class="btn-register">Register</button>
+      <input type="password" placeholder="Enter Password" name="pass" id="pass">
+      <label for="pass">
+        <strong>Confirm Password</strong>
+      </label>
+      <input type="password" placeholder="Enter Password" name="pass-confir" id="confirPass">
+      <button type="submit" class="btn-register" onclick="register()">Register</button>
+    </div>
+
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
     </div>
   </form>
 
