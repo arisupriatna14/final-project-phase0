@@ -1,5 +1,5 @@
 ## Final Project Phase 0
-# To-Do Apps
+# To-Do Apps V.1.0
 ### https://arisupriatna14.github.io/final-project-phase0/
 
 ### Halaman Utama versi Desktop
